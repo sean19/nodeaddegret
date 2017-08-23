@@ -1,0 +1,6 @@
+
+message user_login{
+    required int32 userId = 1;
+    required string userName = 2;
+    
+}

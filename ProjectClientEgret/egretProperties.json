@@ -1,0 +1,44 @@
+{
+	"native": {
+		"path_ignore": []
+	},
+	"publish": {
+		"web": 0,
+		"native": 1,
+		"path": "bin-release"
+	},
+	"egret_version": "5.0.6",
+	"modules": [
+		{
+			"name": "egret"
+		},
+		{
+			"name": "game"
+		},
+		{
+			"name": "res"
+		},
+		{
+			"name": "socket"
+		},
+		{
+			"name": "tween"
+		},
+		{
+			"name": "protobuf",
+			"path": "../lib/protobuf"
+		},
+		{
+			"name": "protots",
+			"path": "../lib/protots"
+		},
+		{
+			"name": "promise",
+			"path": "./promise"
+		},
+		{
+			"name":"protots",
+			"path":"../lib/protots"
+		}
+	]
+}

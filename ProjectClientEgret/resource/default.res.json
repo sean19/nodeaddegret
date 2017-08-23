@@ -1,0 +1,119 @@
+{
+	"groups": [
+		{
+			"keys": "bg_jpg,egret_icon_png,description_json,Login_proto",
+			"name": "preload"
+		},
+		{
+			"keys": "GameResult_proto,GameSettlement_proto,GameSngBackInfo_proto,HeartBeat_proto,LoginRewardSet_proto,PlayerBaseInfo_proto,PlayerInfoSet_proto,PlayerOp_proto,PlayerTaskSet_proto,PlayerTurn_proto,ShowCardSet_proto,Sitdown_proto,SubPool_proto,TableGroupInfoSet_proto,TableInfo_proto,TableWinRecord_proto",
+			"name": "proto"
+		}
+	],
+	"resources": [
+		{
+			"url": "assets/bg.jpg",
+			"type": "image",
+			"name": "bg_jpg"
+		},
+		{
+			"url": "assets/egret_icon.png",
+			"type": "image",
+			"name": "egret_icon_png"
+		},
+		{
+			"url": "config/description.json",
+			"type": "json",
+			"name": "description_json"
+		},
+		{
+			"url": "proto/GameResult.proto",
+			"type": "bin",
+			"name": "GameResult_proto"
+		},
+		{
+			"url": "proto/GameSettlement.proto",
+			"type": "bin",
+			"name": "GameSettlement_proto"
+		},
+		{
+			"url": "proto/GameSngBackInfo.proto",
+			"type": "bin",
+			"name": "GameSngBackInfo_proto"
+		},
+		{
+			"url": "proto/HeartBeat.proto",
+			"type": "bin",
+			"name": "HeartBeat_proto"
+		},
+		{
+			"url": "proto/LoginRewardSet.proto",
+			"type": "bin",
+			"name": "LoginRewardSet_proto"
+		},
+		{
+			"url": "proto/PlayerBaseInfo.proto",
+			"type": "bin",
+			"name": "PlayerBaseInfo_proto"
+		},
+		{
+			"url": "proto/PlayerInfoSet.proto",
+			"type": "bin",
+			"name": "PlayerInfoSet_proto"
+		},
+		{
+			"url": "proto/PlayerOp.proto",
+			"type": "bin",
+			"name": "PlayerOp_proto"
+		},
+		{
+			"url": "proto/PlayerTaskSet.proto",
+			"type": "bin",
+			"name": "PlayerTaskSet_proto"
+		},
+		{
+			"url": "proto/PlayerTurn.proto",
+			"type": "bin",
+			"name": "PlayerTurn_proto"
+		},
+		{
+			"url": "proto/ShowCardSet.proto",
+			"type": "bin",
+			"name": "ShowCardSet_proto"
+		},
+		{
+			"url": "proto/Sitdown.proto",
+			"type": "bin",
+			"name": "Sitdown_proto"
+		},
+		{
+			"url": "proto/SubPool.proto",
+			"type": "bin",
+			"name": "SubPool_proto"
+		},
+		{
+			"url": "proto/TableGroupInfoSet.proto",
+			"type": "bin",
+			"name": "TableGroupInfoSet_proto"
+		},
+		{
+			"url": "proto/TableInfo.proto",
+			"type": "bin",
+			"name": "TableInfo_proto"
+		},
+		{
+			"url": "proto/TableWinRecord.proto",
+			"type": "bin",
+			"name": "TableWinRecord_proto"
+		},
+		{
+			"url": "proto/template.proto",
+			"type": "text",
+			"name": "template_proto"
+		},
+		{
+			"url": "proto/Login.proto",
+			"type": "text",
+			"name": "Login_proto"
+		}
+	]
+}

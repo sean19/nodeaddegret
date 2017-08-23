@@ -1,0 +1,4 @@
+function getInfo(ley)
+{
+    return "";
+}

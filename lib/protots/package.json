@@ -1,0 +1,7 @@
+{
+	"name": "protots",
+	"typings": "typings/User_login.d.ts",
+	"devDependencies": {
+		"protobufjs": "^6.8.0"
+	}
+}
