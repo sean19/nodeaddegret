@@ -1,0 +1,4 @@
+{
+	"name": "protobuf",
+	"typings":"typings/index.d.ts"
+}

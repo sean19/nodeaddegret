@@ -1,0 +1,4 @@
+interface IDispose
+{
+    dispose();
+}
