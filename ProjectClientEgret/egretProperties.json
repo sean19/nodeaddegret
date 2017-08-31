@@ -27,18 +27,6 @@
 		{
 			"name": "protobuf",
 			"path": "../lib/protobuf"
-		},
-		{
-			"name": "protots",
-			"path": "../lib/protots"
-		},
-		{
-			"name": "promise",
-			"path": "./promise"
-		},
-		{
-			"name":"protots",
-			"path":"../lib/protots"
 		}
 	]
 }

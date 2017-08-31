@@ -2,7 +2,6 @@ module texas
 {
 	export class ProtoBufMgr
 	{
-		private static instance:ProtoBufMgr;
 		private protoArray:Array<any> = [];
 
 		public constructor()
@@ -10,15 +9,12 @@ module texas
 
 		}
 
-		public static getInstance():ProtoBufMgr
-		{
-			if( !ProtoBufMgr.instance ) ProtoBufMgr.instance = new ProtoBufMgr();
-			return ProtoBufMgr.instance;
-		}
+		
 
 		public init()
 		{
-			this.pushProtoData( "PlayerInfoSet", [ "PlayerInfoSet", "PlayerInfo" ] );
+			this.pushProtoData( "Login_proto", [ "user_login" ] );
+			/**
 			this.pushProtoData( "TableInfo", [ "TableInfo" ] );
 			this.pushProtoData( "TableGroupInfoSet", [ "TableGroupInfoSet" ] );
 			this.pushProtoData( "PlayerOp", [ "PlayerOp" ] );
@@ -33,6 +29,7 @@ module texas
 			this.pushProtoData( "PlayerBaseInfo", [ "PlayerBaseInfo" ] );
 			this.pushProtoData( "GameSettlement", [ "GameSettlement" ] );
             this.pushProtoData( "GameSngBackInfo", [ "GameSngBackInfo", "SngPlayer" ] );
+			 */
 		}
 
 		/**

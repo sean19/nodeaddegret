@@ -1,3 +1,6 @@
+var __reflect = (this && this.__reflect) || function (p, c, t) {
+    p.__class__ = c, t ? t.push(c) : t = [c], p.__types__ = p.__types__ ? t.concat(p.__types__) : t;
+};
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -8,6 +11,9 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
+var SocketType = texas.SocketType;
+var SocketInfo = texas.SocketInfo;
+var CmdTypeUser = texas.CmdTypeUser;
 var MainUI = (function (_super) {
     __extends(MainUI, _super);
     function MainUI() {
@@ -16,14 +22,29 @@ var MainUI = (function (_super) {
         return _this;
     }
     MainUI.prototype.initBtn = function () {
-        this._txt_add = new egret.TextField();
-        this.addChild(this._txt_add);
-        this._txt_add.text = "添加";
-        this._txt_add.touchEnabled = true;
-        this._txt_add.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onadd, this);
+        this.addbtn(0, "添加");
+        this.addbtn(100, "发消息");
     };
-    MainUI.prototype.onadd = function (e) {
-        II.sk.startConnet();
+    MainUI.prototype.addbtn = function (xps, info) {
+        var txt = new egret.TextField();
+        this.addChild(txt);
+        txt.x = xps;
+        txt.text = info;
+        txt.touchEnabled = true;
+        txt.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onTap, this);
+    };
+    MainUI.prototype.onTap = function (e) {
+        switch (e.target.text) {
+            case "添加":
+                var socketinfo = new SocketInfo(SocketType.Socket_User, "127.0.0.1", 7001, "");
+                II.sk.addSocketClient(socketinfo).connect();
+                break;
+            case "发消息":
+                II.skh.getHandler(SocketType.Socket_User, CmdTypeUser.LOGIN).sendMsg();
+                break;
+        }
     };
     return MainUI;
 }(egret.DisplayObjectContainer));
+__reflect(MainUI.prototype, "MainUI");
+//# sourceMappingURL=MainUI.js.map

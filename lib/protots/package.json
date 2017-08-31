@@ -1,7 +1,9 @@
 {
 	"name": "protots",
-	"typings": "typings/User_login.d.ts",
+	"typings": "typings",
 	"devDependencies": {
 		"protobufjs": "^6.8.0"
-	}
+	},
+	"root": "src"
+
 }

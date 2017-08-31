@@ -1,0 +1,6 @@
+
+message BB{
+    required int32 userId = 1;
+    required string userName = 2;
+    
+}

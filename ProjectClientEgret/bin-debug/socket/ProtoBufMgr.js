@@ -1,30 +1,30 @@
+var __reflect = (this && this.__reflect) || function (p, c, t) {
+    p.__class__ = c, t ? t.push(c) : t = [c], p.__types__ = p.__types__ ? t.concat(p.__types__) : t;
+};
 var texas;
 (function (texas) {
     var ProtoBufMgr = (function () {
         function ProtoBufMgr() {
             this.protoArray = [];
         }
-        ProtoBufMgr.getInstance = function () {
-            if (!ProtoBufMgr.instance)
-                ProtoBufMgr.instance = new ProtoBufMgr();
-            return ProtoBufMgr.instance;
-        };
         ProtoBufMgr.prototype.init = function () {
-            this.pushProtoData("PlayerInfoSet", ["PlayerInfoSet", "PlayerInfo"]);
-            this.pushProtoData("TableInfo", ["TableInfo"]);
-            this.pushProtoData("TableGroupInfoSet", ["TableGroupInfoSet"]);
-            this.pushProtoData("PlayerOp", ["PlayerOp"]);
-            this.pushProtoData("PlayerTurn", ["PlayerTurn"]);
-            this.pushProtoData("SubPool", ["SubPool"]);
-            this.pushProtoData("Sitdown", ["Sitdown"]);
-            this.pushProtoData("GameResult", ["GameResult"]);
-            this.pushProtoData("ShowCardSet", ["ShowCardSet"]);
-            this.pushProtoData("PlayerTaskSet", ["PlayerTaskSet"]);
-            this.pushProtoData("LoginRewardSet", ["LoginRewardSet"]);
-            this.pushProtoData("TableWinRecord", ["TableWinRecord"]);
-            this.pushProtoData("PlayerBaseInfo", ["PlayerBaseInfo"]);
-            this.pushProtoData("GameSettlement", ["GameSettlement"]);
-            this.pushProtoData("GameSngBackInfo", ["GameSngBackInfo", "SngPlayer"]);
+            this.pushProtoData("Login_proto", ["user_login"]);
+            /**
+            this.pushProtoData( "TableInfo", [ "TableInfo" ] );
+            this.pushProtoData( "TableGroupInfoSet", [ "TableGroupInfoSet" ] );
+            this.pushProtoData( "PlayerOp", [ "PlayerOp" ] );
+            this.pushProtoData( "PlayerTurn", [ "PlayerTurn" ] );
+            this.pushProtoData( "SubPool", [ "SubPool" ] );
+            this.pushProtoData( "Sitdown", [ "Sitdown" ] );
+            this.pushProtoData( "GameResult", [ "GameResult" ] );
+            this.pushProtoData( "ShowCardSet", [ "ShowCardSet" ] );
+            this.pushProtoData( "PlayerTaskSet", [ "PlayerTaskSet" ] );
+            this.pushProtoData( "LoginRewardSet", [ "LoginRewardSet" ] );
+            this.pushProtoData( "TableWinRecord", [ "TableWinRecord" ] );
+            this.pushProtoData( "PlayerBaseInfo", [ "PlayerBaseInfo" ] );
+            this.pushProtoData( "GameSettlement", [ "GameSettlement" ] );
+            this.pushProtoData( "GameSngBackInfo", [ "GameSngBackInfo", "SngPlayer" ] );
+             */
         };
         /**
          * [pushProtoData description]
@@ -56,4 +56,6 @@ var texas;
         return ProtoBufMgr;
     }());
     texas.ProtoBufMgr = ProtoBufMgr;
+    __reflect(ProtoBufMgr.prototype, "texas.ProtoBufMgr");
 })(texas || (texas = {}));
+//# sourceMappingURL=ProtoBufMgr.js.map
