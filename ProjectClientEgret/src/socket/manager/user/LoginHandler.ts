@@ -2,18 +2,21 @@ module texas
 {
     export class LoginHandler extends HandlerBase
     {
+        public constructor()
+        {
+            super();
+        }
         protected get class_name():string{
-        return "user_login";
+        return "login_info";
     }
         /**是否已经登录过，sockect重连*/
         public static sockectReconnect:boolean = false;
         public execute( pkg:SocketPackage )
         {
-            
 			var msg = this.getmsg(pkg);
-			
+           II.event_center.callEvent(EventEnum.Socket_login_result,[msg]);
         } 
-        public sendMsg():void
+        public sendMsg(msg:any):void
         {
             var proto: string = RES.getRes("Login_proto");               //加载PB数据结果定义字符
             var builder:any = dcodeIO.ProtoBuf.loadProto(proto,null);          //解析PB数据定义文件，生成PB对象构造器 (loadProtoFile用这个可以代替RES的功能，自己选）
@@ -21,8 +24,8 @@ module texas
             var data:any = new clazz();
             //创建一个数据结构
             //data.set("id",1);//可以使用data.id=1;
-            data.userId=500;//赋值
-            data.userName = "sean1";
+            data.name=msg.name;//赋值
+            data.pass = msg.pass;
 
             //转成字节
             var btyearray:ArrayBuffer = data.toBuffer();

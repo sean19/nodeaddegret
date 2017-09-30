@@ -35,7 +35,7 @@ module texas
     {
 
     }
-    public sendMsg():void
+    public sendMsg(mag:any):void
     {
 
     }

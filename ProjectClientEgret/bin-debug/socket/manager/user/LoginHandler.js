@@ -16,27 +16,28 @@ var texas;
     var LoginHandler = (function (_super) {
         __extends(LoginHandler, _super);
         function LoginHandler() {
-            return _super !== null && _super.apply(this, arguments) || this;
+            return _super.call(this) || this;
         }
         Object.defineProperty(LoginHandler.prototype, "class_name", {
             get: function () {
-                return "user_login";
+                return "login_info";
             },
             enumerable: true,
             configurable: true
         });
         LoginHandler.prototype.execute = function (pkg) {
             var msg = this.getmsg(pkg);
+            II.event_center.callEvent(EventEnum.Socket_login_result, [msg]);
         };
-        LoginHandler.prototype.sendMsg = function () {
+        LoginHandler.prototype.sendMsg = function (msg) {
             var proto = RES.getRes("Login_proto"); //加载PB数据结果定义字符
             var builder = dcodeIO.ProtoBuf.loadProto(proto, null); //解析PB数据定义文件，生成PB对象构造器 (loadProtoFile用这个可以代替RES的功能，自己选）
             var clazz = builder.build("user_login"); //构建一个PB数据结构（messageName为PB中定义的结果名）
             var data = new clazz();
             //创建一个数据结构
             //data.set("id",1);//可以使用data.id=1;
-            data.userId = 500; //赋值
-            data.userName = "sean1";
+            data.name = msg.name; //赋值
+            data.pass = msg.pass;
             //转成字节
             var btyearray = data.toBuffer();
             var len = btyearray.byteLength;

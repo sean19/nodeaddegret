@@ -9,15 +9,15 @@ module texas
 		public constructor(socketInfo:SocketInfo)
 		{
 			this._socket_info = socketInfo;
-			II.skh.addManager(socketInfo.socket_type);
 		}
-		public connect(  )
+		public connect( )
 		{
 			this._socket_Connector = new SocketConnector(  this._socket_info.socket_port, this._socket_info.socket_ip, this._socket_info.socket_path,this.onConnect,this.onMessage,this );
-			this._socket_Connector.connect( );
+			this._socket_Connector.connect();
 		}
 		protected onConnect():void
 		{
+			II.event_center.callEvent(EventEnum.Socket_connected);
 			console.log("on connect");
 		}
 		protected onMessage(sk:egret.WebSocket):void
@@ -26,7 +26,8 @@ module texas
 			sk.readBytes(byte);
 			var pkg:SocketPackage = new SocketPackage(-1);
 			pkg.readPBytes(byte);
-			II.skh.getHandler(this._socket_info.socket_type,pkg.cmdType).execute(pkg);
+			var hdl:IHandler = II.handlerFactory.getHandler(this._socket_info.socket_type,pkg.cmdType);
+ 			hdl.execute(pkg);
             //var pkg:Package = new Package();
            // pkg.readPkg( Util.string2ArrayBuffer( e.target.readUTF() ) );
 			/**

@@ -44,7 +44,7 @@ var texas;
         };
         HandlerBase.prototype.execute = function (pkg) {
         };
-        HandlerBase.prototype.sendMsg = function () {
+        HandlerBase.prototype.sendMsg = function (mag) {
         };
         return HandlerBase;
     }());

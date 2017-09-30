@@ -3,7 +3,7 @@ module texas
 	export interface IHandler
 	{
 		getCmdType():number;
-		sendMsg():void;
+		sendMsg(msg:any):void;
 		execute( pkg:SocketPackage ): void;
 	}
 }

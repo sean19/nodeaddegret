@@ -18,14 +18,6 @@ var texas;
         function SocketHandlerManager() {
             return _super !== null && _super.apply(this, arguments) || this;
         }
-        SocketHandlerManager.prototype.addManager = function (socketType) {
-            if (this.getItem(socketType) != null)
-                return;
-            var skm = texas.HManagerFactory.getHandlerManager(socketType);
-            if (skm == null)
-                return;
-            this.addItem(skm);
-        };
         SocketHandlerManager.prototype.getHandler = function (SocketType, cmdType) {
             var skm = this.getItem(SocketType);
             return skm.gethandler(cmdType);

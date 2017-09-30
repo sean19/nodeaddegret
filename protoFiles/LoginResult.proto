@@ -1,0 +1,6 @@
+message login_info{
+    required string result = 1;
+    required string accountId =2;
+    required string userName = 3;
+    required string companyName = 4;
+}

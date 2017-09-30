@@ -14,6 +14,8 @@ module texas
 		public init()
 		{
 			this.pushProtoData( "Login_proto", [ "user_login" ] );
+			this.pushProtoData( "LoginResult_proto", [ "login_info" ] );
+			
 			/**
 			this.pushProtoData( "TableInfo", [ "TableInfo" ] );
 			this.pushProtoData( "TableGroupInfoSet", [ "TableGroupInfoSet" ] );

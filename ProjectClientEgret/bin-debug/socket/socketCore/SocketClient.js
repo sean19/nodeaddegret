@@ -6,13 +6,13 @@ var texas;
     var SocketClient = (function () {
         function SocketClient(socketInfo) {
             this._socket_info = socketInfo;
-            II.skh.addManager(socketInfo.socket_type);
         }
         SocketClient.prototype.connect = function () {
             this._socket_Connector = new texas.SocketConnector(this._socket_info.socket_port, this._socket_info.socket_ip, this._socket_info.socket_path, this.onConnect, this.onMessage, this);
             this._socket_Connector.connect();
         };
         SocketClient.prototype.onConnect = function () {
+            II.event_center.callEvent(EventEnum.Socket_connected);
             console.log("on connect");
         };
         SocketClient.prototype.onMessage = function (sk) {
@@ -20,7 +20,8 @@ var texas;
             sk.readBytes(byte);
             var pkg = new SocketPackage(-1);
             pkg.readPBytes(byte);
-            II.skh.getHandler(this._socket_info.socket_type, pkg.cmdType).execute(pkg);
+            var hdl = II.handlerFactory.getHandler(this._socket_info.socket_type, pkg.cmdType);
+            hdl.execute(pkg);
             //var pkg:Package = new Package();
             // pkg.readPkg( Util.string2ArrayBuffer( e.target.readUTF() ) );
             /**
